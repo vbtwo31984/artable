@@ -28,12 +28,12 @@ class RegisterViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if passwordText.text == confirmPasswordText.text {
-            passwordCheckImage.image = UIImage(named: "green_check")
-            confirmPasswordCheckImage.image = UIImage(named: "green_check")
+            passwordCheckImage.image = UIImage(named: Image.GreenCheck)
+            confirmPasswordCheckImage.image = UIImage(named: Image.GreenCheck)
         }
         else {
-            passwordCheckImage.image = UIImage(named: "red_check")
-            confirmPasswordCheckImage.image = UIImage(named: "red_check")
+            passwordCheckImage.image = UIImage(named: Image.RedCheck)
+            confirmPasswordCheckImage.image = UIImage(named: Image.RedCheck)
         }
         if textField == confirmPasswordText {
             passwordCheckImage.isHidden = false
