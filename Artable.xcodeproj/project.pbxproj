@@ -22,6 +22,7 @@
 		A56534DB22DCCD660047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */; };
 		A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534DE22DE09F90047E0FE /* LoginViewController.swift */; };
 		A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E022DE0A050047E0FE /* RegisterViewController.swift */; };
+		A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
 		B2F5F37697CB16FD2762172E /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE17469429C4864C087F8DC /* Pods_Artable.framework */; };
 		E4E0BB397F2582686A1A76F7 /* Pods_ArtableAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A56534DE22DE09F90047E0FE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A56534E022DE0A050047E0FE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		92A73BE622DBAD93002AFB70 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A56534E222DE0D5B0047E0FE /* Utils */,
 				92A73BC522DBACEB002AFB70 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -154,6 +157,14 @@
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A56534E222DE0D5B0047E0FE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A56534E322DE0D6B0047E0FE /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E34CF4B33EEC89DC864A5BE4 /* Pods */ = {
@@ -389,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
 				92A73BC122DBACEA002AFB70 /* ViewController.swift in Sources */,
 				92A73BBF22DBACEA002AFB70 /* AppDelegate.swift in Sources */,
