@@ -24,6 +24,7 @@
 		A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E022DE0A050047E0FE /* RegisterViewController.swift */; };
 		A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
 		A56534E622DE10DA0047E0FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E522DE10DA0047E0FE /* Constants.swift */; };
+		A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E822DF53970047E0FE /* RoundedViews.swift */; };
 		B2F5F37697CB16FD2762172E /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE17469429C4864C087F8DC /* Pods_Artable.framework */; };
 		E4E0BB397F2582686A1A76F7 /* Pods_ArtableAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		A56534E022DE0A050047E0FE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A56534E522DE10DA0047E0FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		92A73BBD22DBACEA002AFB70 /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				A56534E722DF53810047E0FE /* Views */,
 				A56534DC22DE08960047E0FE /* Storyboards */,
 				A56534DD22DE09BD0047E0FE /* Controllers */,
 				92A73BBE22DBACEA002AFB70 /* AppDelegate.swift */,
@@ -168,6 +171,14 @@
 				A56534E522DE10DA0047E0FE /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A56534E722DF53810047E0FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A56534E822DF53970047E0FE /* RoundedViews.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E34CF4B33EEC89DC864A5BE4 /* Pods */ = {
@@ -407,6 +418,7 @@
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
 				92A73BC122DBACEA002AFB70 /* ViewController.swift in Sources */,
 				92A73BBF22DBACEA002AFB70 /* AppDelegate.swift in Sources */,
+				A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */,
 				A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */,
 				A56534E622DE10DA0047E0FE /* Constants.swift in Sources */,
 			);
