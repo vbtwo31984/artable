@@ -55,7 +55,9 @@ class RegisterViewController: UIViewController {
         
         activityIndicator.startAnimating()
         
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        guard let user = Auth.auth().currentUser else { return }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        user.link(with: credential) { authResult, error in
             self.activityIndicator.stopAnimating()
             
             if let error = error {

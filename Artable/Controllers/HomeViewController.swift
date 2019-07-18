@@ -14,13 +14,24 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var loginOutButton: UIBarButtonItem!
     
     
+    fileprivate func signInAnonymously() {
+        Auth.auth().signInAnonymously { (result, error) in
+            if let error = error {
+                debugPrint(error)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        if Auth.auth().currentUser == nil {
+            signInAnonymously()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
             loginOutButton.title = "Logout"
         }
         else {
@@ -29,9 +40,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func loginOutPressed(_ sender: Any) {
-        if Auth.auth().currentUser != nil {
+        if let user = Auth.auth().currentUser, !user.isAnonymous {
             do {
                 try Auth.auth().signOut()
+                signInAnonymously()
             } catch {
                 debugPrint(error)
             }
