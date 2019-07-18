@@ -17,6 +17,8 @@
 		92A73BDC22DBAD58002AFB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDA22DBAD58002AFB70 /* Main.storyboard */; };
 		92A73BE122DBAD59002AFB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */; };
 		92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
+		A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */; };
+		A54E892322E0BBDB00886DBE /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */; };
 		A56534D722DCBEC90047E0FE /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */; };
 		A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534D822DCCC980047E0FE /* GoogleService-Info.plist */; };
 		A56534DB22DCCD660047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */; };
@@ -49,6 +51,8 @@
 		92A73BE022DBAD59002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92A73BE222DBAD59002AFB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		A56534D822DCCC980047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		92A73BBD22DBACEA002AFB70 /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				A54E891F22E0BBBC00886DBE /* XIBs */,
 				A56534E722DF53810047E0FE /* Views */,
 				A56534DC22DE08960047E0FE /* Storyboards */,
 				A56534DD22DE09BD0047E0FE /* Controllers */,
@@ -142,6 +147,15 @@
 				9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A54E891F22E0BBBC00886DBE /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */,
+				A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		A56534DC22DE08960047E0FE /* Storyboards */ = {
@@ -275,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54E892322E0BBDB00886DBE /* ForgotPasswordViewController.xib in Resources */,
 				92A73BC922DBACEB002AFB70 /* LaunchScreen.storyboard in Resources */,
 				92A73BC622DBACEB002AFB70 /* Assets.xcassets in Resources */,
 				A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */,
@@ -414,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */,
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
 				92A73BC122DBACEA002AFB70 /* HomeViewController.swift in Sources */,
