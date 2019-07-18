@@ -62,6 +62,7 @@ class RegisterViewController: UIViewController {
             
             if let error = error {
                 debugPrint(error)
+                self.handleFireAuthError(error: error)
                 return
             }
             

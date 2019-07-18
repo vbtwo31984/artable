@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
         Auth.auth().signInAnonymously { (result, error) in
             if let error = error {
                 debugPrint(error)
+                self.handleFireAuthError(error: error)
             }
         }
     }
@@ -46,6 +47,7 @@ class HomeViewController: UIViewController {
                 signInAnonymously()
             } catch {
                 debugPrint(error)
+                self.handleFireAuthError(error: error)
             }
         }
         presentLoginController()
