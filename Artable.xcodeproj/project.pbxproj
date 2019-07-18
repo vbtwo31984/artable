@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92A73BBF22DBACEA002AFB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A73BBE22DBACEA002AFB70 /* AppDelegate.swift */; };
-		92A73BC122DBACEA002AFB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A73BC022DBACEA002AFB70 /* ViewController.swift */; };
+		92A73BC122DBACEA002AFB70 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A73BC022DBACEA002AFB70 /* HomeViewController.swift */; };
 		92A73BC422DBACEA002AFB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC222DBACEA002AFB70 /* Main.storyboard */; };
 		92A73BC622DBACEB002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
 		92A73BC922DBACEB002AFB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC722DBACEB002AFB70 /* LaunchScreen.storyboard */; };
@@ -37,7 +37,7 @@
 		68747D27C427AC5BAC38A0F3 /* Pods-Artable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artable.release.xcconfig"; path = "Pods/Target Support Files/Pods-Artable/Pods-Artable.release.xcconfig"; sourceTree = "<group>"; };
 		92A73BBB22DBACEA002AFB70 /* Artable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A73BBE22DBACEA002AFB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92A73BC022DBACEA002AFB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92A73BC022DBACEA002AFB70 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		92A73BC322DBACEA002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92A73BC522DBACEB002AFB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A73BC822DBACEB002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		A56534DD22DE09BD0047E0FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				92A73BC022DBACEA002AFB70 /* ViewController.swift */,
+				92A73BC022DBACEA002AFB70 /* HomeViewController.swift */,
 				A56534DE22DE09F90047E0FE /* LoginViewController.swift */,
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
 			);
@@ -416,7 +416,7 @@
 			files = (
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
-				92A73BC122DBACEA002AFB70 /* ViewController.swift in Sources */,
+				92A73BC122DBACEA002AFB70 /* HomeViewController.swift in Sources */,
 				92A73BBF22DBACEA002AFB70 /* AppDelegate.swift in Sources */,
 				A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */,
 				A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */,

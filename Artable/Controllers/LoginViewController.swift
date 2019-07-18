@@ -39,11 +39,12 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            print("signed in successfully")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
     @IBAction func guestPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
