@@ -12,7 +12,8 @@ import Firebase
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var loginOutButton: UIBarButtonItem!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     fileprivate func signInAnonymously() {
         Auth.auth().signInAnonymously { (result, error) in
