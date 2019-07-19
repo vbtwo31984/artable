@@ -19,6 +19,8 @@
 		92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
 		A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */; };
 		A54E892322E0BBDB00886DBE /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */; };
+		A54E892522E21CFB00886DBE /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892422E21CFB00886DBE /* FirebaseUtils.swift */; };
+		A54E892622E21D8800886DBE /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892422E21CFB00886DBE /* FirebaseUtils.swift */; };
 		A56534D722DCBEC90047E0FE /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */; };
 		A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534D822DCCC980047E0FE /* GoogleService-Info.plist */; };
 		A56534DB22DCCD660047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */; };
@@ -53,6 +55,7 @@
 		9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		A54E892422E21CFB00886DBE /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		A56534D822DCCC980047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -152,7 +155,6 @@
 		A54E891F22E0BBBC00886DBE /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */,
 				A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */,
 			);
 			path = XIBs;
@@ -174,6 +176,7 @@
 				92A73BC022DBACEA002AFB70 /* HomeViewController.swift */,
 				A56534DE22DE09F90047E0FE /* LoginViewController.swift */,
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
+				A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			children = (
 				A56534E322DE0D6B0047E0FE /* Extensions.swift */,
 				A56534E522DE10DA0047E0FE /* Constants.swift */,
+				A54E892422E21CFB00886DBE /* FirebaseUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -429,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54E892522E21CFB00886DBE /* FirebaseUtils.swift in Sources */,
 				A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */,
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
@@ -444,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54E892622E21D8800886DBE /* FirebaseUtils.swift in Sources */,
 				92A73BD922DBAD58002AFB70 /* ViewController.swift in Sources */,
 				92A73BD722DBAD58002AFB70 /* AppDelegate.swift in Sources */,
 			);
@@ -611,6 +617,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B6BJ8WR9X;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B6BJ8WR9X;
 				INFOPLIST_FILE = Artable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,6 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B6BJ8WR9X;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -668,6 +677,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B6BJ8WR9X;
 				INFOPLIST_FILE = ArtableAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

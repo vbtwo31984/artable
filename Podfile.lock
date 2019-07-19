@@ -121,14 +121,14 @@ PODS:
   - Stripe (15.0.1)
 
 DEPENDENCIES:
-  - Firebase/Auth (= 6.1.0)
-  - Firebase/Core (= 6.1.0)
-  - Firebase/Firestore (= 6.1.0)
-  - Firebase/Functions (= 6.1.0)
-  - Firebase/Storage (= 6.1.0)
-  - IQKeyboardManagerSwift (= 6.3.0)
-  - Kingfisher (~> 4.0)
-  - Stripe (= 15.0.1)
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Firestore
+  - Firebase/Functions
+  - Firebase/Storage
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - Stripe
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -177,6 +177,6 @@ SPEC CHECKSUMS:
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
   Stripe: 2c4d0a88817361a102886315ff452d90f65e898b
 
-PODFILE CHECKSUM: 0beb1da74c7783b00d96f5d96b9d9314c73c8c96
+PODFILE CHECKSUM: 52c0fa946ca91fab9c3da788b3d4ce0848c883a2
 
 COCOAPODS: 1.5.2
