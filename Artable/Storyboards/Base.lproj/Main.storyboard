@@ -63,11 +63,49 @@
                         <outlet property="activityIndicator" destination="HU9-Ew-suP" id="B3U-ir-sFh"/>
                         <outlet property="collectionView" destination="edy-lo-fFb" id="dLL-fb-pN9"/>
                         <outlet property="loginOutButton" destination="Alv-O9-J7I" id="pK9-kH-iqu"/>
+                        <segue destination="QRU-pP-doj" kind="show" identifier="toProductsVC" id="vwg-eC-jG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="-536"/>
+        </scene>
+        <!--Products View Controller-->
+        <scene sceneID="g8j-ze-dwj">
+            <objects>
+                <viewController id="QRU-pP-doj" customClass="ProductsViewController" customModule="Artable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAN-WV-84f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="FWN-cJ-6iS">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-7y-NOo">
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FWN-cJ-6iS" firstAttribute="trailing" secondItem="9vB-XP-nfJ" secondAttribute="trailing" id="F4B-gj-zmw"/>
+                            <constraint firstItem="lgQ-7y-NOo" firstAttribute="top" secondItem="9vB-XP-nfJ" secondAttribute="top" id="RQb-y7-CB2"/>
+                            <constraint firstItem="FWN-cJ-6iS" firstAttribute="leading" secondItem="9vB-XP-nfJ" secondAttribute="leading" id="djs-dM-QBt"/>
+                            <constraint firstItem="FWN-cJ-6iS" firstAttribute="top" secondItem="9vB-XP-nfJ" secondAttribute="top" id="gsa-iA-wrV"/>
+                            <constraint firstItem="9vB-XP-nfJ" firstAttribute="trailing" secondItem="lgQ-7y-NOo" secondAttribute="trailing" constant="20" id="obm-zp-2uQ"/>
+                            <constraint firstItem="lgQ-7y-NOo" firstAttribute="leading" secondItem="9vB-XP-nfJ" secondAttribute="leading" constant="20" id="qnA-09-65h"/>
+                            <constraint firstAttribute="bottom" secondItem="lgQ-7y-NOo" secondAttribute="bottom" id="wX1-Xl-d8J"/>
+                            <constraint firstAttribute="bottom" secondItem="FWN-cJ-6iS" secondAttribute="bottom" id="zJJ-sm-2am"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9vB-XP-nfJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="lgQ-7y-NOo" id="VDu-QO-mkw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7A-6L-gfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="-536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y1s-6p-ZWC">

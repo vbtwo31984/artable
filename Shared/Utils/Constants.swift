@@ -32,3 +32,7 @@ struct Color {
 struct Identifier {
     static let CategoryCell = "CategoryCell"
 }
+
+struct Segue {
+    static let ToProducts = "toProductsVC"
+}

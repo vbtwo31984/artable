@@ -35,6 +35,10 @@
 		A5EC3DF422E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
 		A5EC3DF522E5F2190042FF72 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */; };
 		A5EC3DF622E5F2190042FF72 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */; };
+		A5EC3DFA22E5F7BA0042FF72 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */; };
+		A5EC3DFB22E5F7D80042FF72 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */; };
+		A5EC3DFD22E5F8240042FF72 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DFC22E5F8240042FF72 /* Product.swift */; };
+		A5EC3DFE22E5F8240042FF72 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DFC22E5F8240042FF72 /* Product.swift */; };
 		B2F5F37697CB16FD2762172E /* Pods_Artable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE17469429C4864C087F8DC /* Pods_Artable.framework */; };
 		E4E0BB397F2582686A1A76F7 /* Pods_ArtableAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,8 @@
 		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		A5EC3DFC22E5F8240042FF72 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A54E892822E220B000886DBE /* Category.swift */,
+				A5EC3DFC22E5F8240042FF72 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 				A56534DE22DE09F90047E0FE /* LoginViewController.swift */,
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
 				A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */,
+				A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -477,11 +485,13 @@
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
 				92A73BC122DBACEA002AFB70 /* HomeViewController.swift in Sources */,
+				A5EC3DFA22E5F7BA0042FF72 /* ProductsViewController.swift in Sources */,
 				92A73BBF22DBACEA002AFB70 /* AppDelegate.swift in Sources */,
 				A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */,
 				A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */,
 				A56534E622DE10DA0047E0FE /* Constants.swift in Sources */,
 				A5EC3DF322E5F2190042FF72 /* CategoryCell.swift in Sources */,
+				A5EC3DFD22E5F8240042FF72 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,11 +499,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EC3DFB22E5F7D80042FF72 /* ProductsViewController.swift in Sources */,
 				A54E892622E21D8800886DBE /* FirebaseUtils.swift in Sources */,
 				92A73BD922DBAD58002AFB70 /* ViewController.swift in Sources */,
 				92A73BD722DBAD58002AFB70 /* AppDelegate.swift in Sources */,
 				A54E892A22E220B000886DBE /* Category.swift in Sources */,
 				A5EC3DF422E5F2190042FF72 /* CategoryCell.swift in Sources */,
+				A5EC3DFE22E5F8240042FF72 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
