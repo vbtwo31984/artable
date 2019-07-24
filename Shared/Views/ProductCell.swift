@@ -26,7 +26,9 @@ class ProductCell: UITableViewCell {
         title.text = product.name
         price.text = String(product.price)
         if let url = URL(string: product.imageUrl) {
-            productImage.kf.setImage(with: url)
+            let placeholder = UIImage(named: "placeholder")
+            productImage.kf.indicatorType = .activity
+            productImage.kf.setImage(with: url, placeholder: placeholder, options: [.transition(.fade(0.1))])
         }
     }
 
