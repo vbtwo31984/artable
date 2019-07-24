@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     var categories = [Category]()
     var selectedCategory: Category!
+    var db: Firestore!
     
     fileprivate func signInAnonymously() {
         Auth.auth().signInAnonymously { (result, error) in
@@ -30,8 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let category = Category(name: "Nature", id: "sfaf", imageUrl: "https://images.unsplash.com/photo-1563724160625-eeaf8f4f905f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60", isActive: true, timeStamp: Timestamp())
-        categories.append(category)
+        db = Firestore.firestore()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         if Auth.auth().currentUser == nil {
             signInAnonymously()
         }
+        fetchDocument()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +75,16 @@ class HomeViewController: UIViewController {
         if segue.identifier == Segue.ToProducts {
             if let destination = segue.destination as? ProductsViewController {
                 destination.category = selectedCategory
+            }
+        }
+    }
+    
+    func fetchDocument() {
+        let docRef = db.collection("categories").document("hFC1lrheE0xeWfERZe4j")
+        docRef.getDocument { (snap, error) in
+            if let data = snap?.data() {
+                self.categories.append(Category(data: data))
+                self.collectionView.reloadData()
             }
         }
     }
