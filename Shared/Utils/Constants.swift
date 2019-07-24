@@ -31,6 +31,7 @@ struct Color {
 
 struct Identifier {
     static let CategoryCell = "CategoryCell"
+    static let ProductCell = "ProductCell"
 }
 
 struct Segue {

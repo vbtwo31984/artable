@@ -99,6 +99,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9vB-XP-nfJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="beC-bC-CLi"/>
                     <connections>
                         <outlet property="tableView" destination="lgQ-7y-NOo" id="VDu-QO-mkw"/>
                     </connections>
@@ -118,7 +119,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DQO-f9-XGj"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="igw-QA-bWw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygV-Y4-hwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
