@@ -12,6 +12,7 @@ import FirebaseFirestore
 class ProductsViewController: UIViewController {
     
     var products = [Product]()
+    var category: Category!
     
     @IBOutlet weak var tableView: UITableView!
     
