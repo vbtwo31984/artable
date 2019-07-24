@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
         if Auth.auth().currentUser == nil {
             signInAnonymously()
         }
-        fetchDocument()
+        fetchCollection()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +75,18 @@ class HomeViewController: UIViewController {
         if segue.identifier == Segue.ToProducts {
             if let destination = segue.destination as? ProductsViewController {
                 destination.category = selectedCategory
+            }
+        }
+    }
+    
+    func fetchCollection() {
+        let collectionRef = db.collection("categories")
+        collectionRef.getDocuments { (snap, error) in
+            if let documents = snap?.documents {
+                for document in documents {
+                    self.categories.append(Category(data: document.data()))
+                }
+                self.collectionView.reloadData()
             }
         }
     }
