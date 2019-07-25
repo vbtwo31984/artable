@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     var categories = [Category]()
     var selectedCategory: Category!
     var db: Firestore!
+    var listener: ListenerRegistration!
     
     fileprivate func signInAnonymously() {
         Auth.auth().signInAnonymously { (result, error) in
@@ -40,7 +41,6 @@ class HomeViewController: UIViewController {
         if Auth.auth().currentUser == nil {
             signInAnonymously()
         }
-        fetchCollection()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +50,13 @@ class HomeViewController: UIViewController {
         else {
             loginOutButton.title = "Login"
         }
+        
+        //        fetchDocument()
+        fetchCollection()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        listener.remove()
     }
     
     @IBAction func loginOutPressed(_ sender: Any) {
@@ -81,24 +88,45 @@ class HomeViewController: UIViewController {
     
     func fetchCollection() {
         let collectionRef = db.collection("categories")
-        collectionRef.getDocuments { (snap, error) in
+        
+        listener = collectionRef.addSnapshotListener { (snap, error) in
             if let documents = snap?.documents {
+                self.categories.removeAll()
                 for document in documents {
                     self.categories.append(Category(data: document.data()))
                 }
                 self.collectionView.reloadData()
             }
         }
+        
+//        collectionRef.getDocuments { (snap, error) in
+//            if let documents = snap?.documents {
+//                for document in documents {
+//                    self.categories.append(Category(data: document.data()))
+//                }
+//                self.collectionView.reloadData()
+//            }
+//        }
     }
     
     func fetchDocument() {
         let docRef = db.collection("categories").document("hFC1lrheE0xeWfERZe4j")
-        docRef.getDocument { (snap, error) in
+        
+        listener = docRef.addSnapshotListener { (snap, error) in
             if let data = snap?.data() {
-                self.categories.append(Category(data: data))
+                self.categories.removeAll()
+                let newCategory = Category(data: data)
+                self.categories.append(newCategory)
                 self.collectionView.reloadData()
             }
         }
+        
+//        docRef.getDocument { (snap, error) in
+//            if let data = snap?.data() {
+//                self.categories.append(Category(data: data))
+//                self.collectionView.reloadData()
+//            }
+//        }
     }
 }
 
