@@ -29,14 +29,18 @@ class HomeViewController: UIViewController {
         }
     }
     
+    fileprivate func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: Identifier.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifier.CategoryCell)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         db = Firestore.firestore()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: Identifier.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifier.CategoryCell)
+        setupCollectionView()
 
         if Auth.auth().currentUser == nil {
             signInAnonymously()
@@ -90,7 +94,7 @@ class HomeViewController: UIViewController {
     }
     
     func setCategoriesListener() {
-        listener = db.collection("categories").whereField("isActive", isEqualTo: true).order(by: "timeStamp", descending: true).addSnapshotListener({ (snap, error) in
+        listener = db.categories.addSnapshotListener({ (snap, error) in
             if let error = error {
                 self.simpleAlert(title: "Error", message: error.localizedDescription)
             }
@@ -112,7 +116,35 @@ class HomeViewController: UIViewController {
             }
         })
     }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.CategoryCell, for: indexPath) as? CategoryCell {
+            cell.configureCell(category: categories[indexPath.item])
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.frame.width
+        let cellWidth = (width - 30) / 2
+        let cellHeight = cellWidth * 1.5
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segue.ToProducts, sender: self)
+    }
+}
+
+extension HomeViewController {
     func onDocumentAdded(change: DocumentChange, category: Category) {
         let newIndex: Int = Int(change.newIndex)
         categories.insert(category, at: newIndex)
@@ -140,74 +172,5 @@ class HomeViewController: UIViewController {
         let oldIndex: Int = Int(change.oldIndex)
         categories.remove(at: oldIndex)
         collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
-    }
-    
-    func fetchCollection() {
-        let collectionRef = db.collection("categories")
-        
-        listener = collectionRef.addSnapshotListener { (snap, error) in
-            if let documents = snap?.documents {
-                self.categories.removeAll()
-                for document in documents {
-                    self.categories.append(Category(data: document.data()))
-                }
-                self.collectionView.reloadData()
-            }
-        }
-        
-//        collectionRef.getDocuments { (snap, error) in
-//            if let documents = snap?.documents {
-//                for document in documents {
-//                    self.categories.append(Category(data: document.data()))
-//                }
-//                self.collectionView.reloadData()
-//            }
-//        }
-    }
-    
-    func fetchDocument() {
-        let docRef = db.collection("categories").document("hFC1lrheE0xeWfERZe4j")
-        
-        listener = docRef.addSnapshotListener { (snap, error) in
-            if let data = snap?.data() {
-                self.categories.removeAll()
-                let newCategory = Category(data: data)
-                self.categories.append(newCategory)
-                self.collectionView.reloadData()
-            }
-        }
-        
-//        docRef.getDocument { (snap, error) in
-//            if let data = snap?.data() {
-//                self.categories.append(Category(data: data))
-//                self.collectionView.reloadData()
-//            }
-//        }
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.CategoryCell, for: indexPath) as? CategoryCell {
-            cell.configureCell(category: categories[indexPath.item])
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width
-        let cellWidth = (width - 30) / 2
-        let cellHeight = cellWidth * 1.5
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCategory = categories[indexPath.item]
-        performSegue(withIdentifier: Segue.ToProducts, sender: self)
     }
 }
