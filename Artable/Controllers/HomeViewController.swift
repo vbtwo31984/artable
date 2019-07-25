@@ -51,12 +51,15 @@ class HomeViewController: UIViewController {
             loginOutButton.title = "Login"
         }
         
-        //        fetchDocument()
-        fetchCollection()
+//        fetchDocument()
+//        fetchCollection()
+        setCategoriesListener()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
     }
     
     @IBAction func loginOutPressed(_ sender: Any) {
@@ -84,6 +87,55 @@ class HomeViewController: UIViewController {
                 destination.category = selectedCategory
             }
         }
+    }
+    
+    func setCategoriesListener() {
+        listener = db.collection("categories").addSnapshotListener({ (snap, error) in
+            if let error = error {
+                self.simpleAlert(title: "Error", message: error.localizedDescription)
+            }
+            
+            snap?.documentChanges.forEach { change in
+                let data = change.document.data()
+                let category = Category(data: data)
+                
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, category: category)
+                case .modified:
+                    self.onDocumentModified(change: change, category: category)
+                case .removed:
+                    self.onDocumentRemoved(change: change)
+                @unknown default:
+                    break
+                }
+            }
+        })
+    }
+    
+    func onDocumentAdded(change: DocumentChange, category: Category) {
+        let newIndex: Int = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    func onDocumentModified(change: DocumentChange, category: Category) {
+        let oldIndex: Int = Int(change.oldIndex)
+        let newIndex: Int = Int(change.newIndex)
+        
+        if(oldIndex == newIndex) {
+            categories[oldIndex] = category
+            collectionView.reloadItems(at: [IndexPath(item: oldIndex, section: 0)])
+        }
+        else {
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)            
+            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+        }
+    }
+    func onDocumentRemoved(change: DocumentChange) {
+        let oldIndex: Int = Int(change.oldIndex)
+        categories.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
     }
     
     func fetchCollection() {
