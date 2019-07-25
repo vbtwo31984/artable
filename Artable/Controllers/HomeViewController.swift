@@ -90,7 +90,7 @@ class HomeViewController: UIViewController {
     }
     
     func setCategoriesListener() {
-        listener = db.collection("categories").addSnapshotListener({ (snap, error) in
+        listener = db.collection("categories").whereField("isActive", isEqualTo: true).order(by: "timeStamp", descending: true).addSnapshotListener({ (snap, error) in
             if let error = error {
                 self.simpleAlert(title: "Error", message: error.localizedDescription)
             }
@@ -128,8 +128,12 @@ class HomeViewController: UIViewController {
         }
         else {
             categories.remove(at: oldIndex)
-            categories.insert(category, at: newIndex)            
-            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+            categories.insert(category, at: newIndex)
+            collectionView.performBatchUpdates({
+                collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+            }) { worked in
+                self.collectionView.reloadItems(at: [IndexPath(item: newIndex, section: 0)])
+            }
         }
     }
     func onDocumentRemoved(change: DocumentChange) {
