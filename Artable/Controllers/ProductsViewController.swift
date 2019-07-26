@@ -13,17 +13,56 @@ class ProductsViewController: UIViewController {
     
     var products = [Product]()
     var category: Category!
+    var db: Firestore!
+    var listener: ListenerRegistration!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: Identifier.ProductCell, bundle: nil), forCellReuseIdentifier: Identifier.ProductCell)
+    }
+    
+    fileprivate func setProductsListener() {
+        listener = db.products(for: category).addSnapshotListener({ (snap, error) in
+            if let error = error {
+                self.simpleAlert(title: "Error", message: error.localizedDescription)
+            }
+            
+            snap?.documentChanges.forEach { change in
+                let data = change.document.data()
+                let product = Product(data: data)
+                
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, product: product)
+                case .modified:
+                    self.onDocumentModified(change: change, product: product)
+                case .removed:
+                    self.onDocumentRemoved(change: change)
+                @unknown default:
+                    break
+                }
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        products.append(Product(name: "Shark", id: "123", category: "Animals", price: 22.33, productDescription: "It's a shark! Gonna bite!", imageUrl: "https://images.unsplash.com/photo-1560275619-4662e36fa65c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60", timeStamp: Timestamp(), stock: 1, favorite: false))
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: Identifier.ProductCell, bundle: nil), forCellReuseIdentifier: Identifier.ProductCell)
+        db = Firestore.firestore()
+        setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setProductsListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        listener.remove()
+        products.removeAll()
+        tableView.reloadData()
     }
 
 }
@@ -43,5 +82,36 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+}
+
+extension ProductsViewController {
+    func onDocumentAdded(change: DocumentChange, product: Product) {
+        let newIndex = Int(change.newIndex)
+        products.insert(product, at: newIndex)
+        tableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .automatic)
+    }
+    func onDocumentModified(change: DocumentChange, product: Product) {
+        let oldIndex = Int(change.oldIndex)
+        let newIndex = Int(change.newIndex)
+        
+        if(oldIndex == newIndex) {
+            products[oldIndex] = product
+            tableView.reloadRows(at: [IndexPath(row: oldIndex, section: 0)], with: .automatic)
+        }
+        else {
+            products.remove(at: oldIndex)
+            products.insert(product, at: newIndex)
+            tableView.performBatchUpdates({
+                tableView.moveRow(at: IndexPath(row: oldIndex, section: 0), to: IndexPath(row: newIndex, section: 0))
+            }) { worked in
+                self.tableView.reloadRows(at: [IndexPath(row: newIndex, section: 0)], with: .automatic)
+            }
+        }
+    }
+    func onDocumentRemoved(change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        products.remove(at: oldIndex)
+        tableView.deleteRows(at: [IndexPath(row: oldIndex, section: 0)], with: .automatic)
     }
 }

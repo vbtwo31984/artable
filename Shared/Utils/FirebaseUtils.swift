@@ -13,6 +13,9 @@ extension Firestore {
     var categories: Query {
         return collection("categories").whereField("isActive", isEqualTo: true).order(by: "timeStamp", descending: true)
     }
+    func products(for category: Category) -> Query {
+        return collection("products").whereField("category", isEqualTo: category.id).order(by: "timeStamp", descending: true)
+    }
 }
 
 extension Auth {
