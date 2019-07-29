@@ -31,6 +31,8 @@
 		A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
 		A56534E622DE10DA0047E0FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E522DE10DA0047E0FE /* Constants.swift */; };
 		A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E822DF53970047E0FE /* RoundedViews.swift */; };
+		A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
+		A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
 		A5EC3DF322E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
 		A5EC3DF422E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
 		A5EC3DF522E5F2190042FF72 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */; };
@@ -79,6 +81,8 @@
 		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A56534E522DE10DA0047E0FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */,
+				A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 		A56534DD22DE09BD0047E0FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */,
 				92A73BC022DBACEA002AFB70 /* HomeViewController.swift */,
 				A56534DE22DE09F90047E0FE /* LoginViewController.swift */,
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
@@ -350,6 +356,7 @@
 				A5EC3DF522E5F2190042FF72 /* CategoryCell.xib in Resources */,
 				92A73BC922DBACEB002AFB70 /* LaunchScreen.storyboard in Resources */,
 				92A73BC622DBACEB002AFB70 /* Assets.xcassets in Resources */,
+				A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */,
 				A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */,
 				92A73BC422DBACEA002AFB70 /* Main.storyboard in Resources */,
 				A56534D722DCBEC90047E0FE /* LoginStoryboard.storyboard in Resources */,
@@ -491,6 +498,7 @@
 			files = (
 				A54E892522E21CFB00886DBE /* FirebaseUtils.swift in Sources */,
 				A54E892922E220B000886DBE /* Category.swift in Sources */,
+				A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */,
 				A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */,
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
