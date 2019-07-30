@@ -20,7 +20,7 @@ class AdminHomeViewController: HomeViewController {
     }
     
     @objc func addCategory() {
-        
+        performSegue(withIdentifier: Segue.ToAddEditCategory, sender: self)
     }
 
 

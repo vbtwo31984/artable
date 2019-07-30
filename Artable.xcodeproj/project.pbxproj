@@ -37,6 +37,7 @@
 		A5C9B23922F08C5B007D90B3 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E822DF53970047E0FE /* RoundedViews.swift */; };
 		A5C9B23A22F08CD1007D90B3 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
 		A5C9B23B22F08CDB007D90B3 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
+		A5C9B23D22F08D88007D90B3 /* AddEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */; };
 		A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
 		A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
 		A5EC3DF322E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
@@ -87,6 +88,7 @@
 		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A56534E522DE10DA0047E0FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryViewController.swift; sourceTree = "<group>"; };
 		A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -155,9 +157,9 @@
 		92A73BD522DBAD58002AFB70 /* ArtableAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				92A73BD622DBAD58002AFB70 /* AppDelegate.swift */,
-				92A73BD822DBAD58002AFB70 /* AdminHomeViewController.swift */,
+				A5C9B23E22F08D91007D90B3 /* Controllers */,
 				92A73BDA22DBAD58002AFB70 /* Main.storyboard */,
+				92A73BD622DBAD58002AFB70 /* AppDelegate.swift */,
 				92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */,
 				92A73BE222DBAD59002AFB70 /* Info.plist */,
 				A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */,
@@ -242,6 +244,15 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A5C9B23E22F08D91007D90B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92A73BD822DBAD58002AFB70 /* AdminHomeViewController.swift */,
+				A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A5EC3DF722E5F21F0042FF72 /* Views */ = {
@@ -527,6 +538,7 @@
 			files = (
 				A5C9B23922F08C5B007D90B3 /* RoundedViews.swift in Sources */,
 				A5EC3DFB22E5F7D80042FF72 /* ProductsViewController.swift in Sources */,
+				A5C9B23D22F08D88007D90B3 /* AddEditCategoryViewController.swift in Sources */,
 				A5C9B23822F08C35007D90B3 /* Constants.swift in Sources */,
 				A54E892622E21D8800886DBE /* FirebaseUtils.swift in Sources */,
 				A5C9B23A22F08CD1007D90B3 /* ProductDetailViewController.swift in Sources */,
