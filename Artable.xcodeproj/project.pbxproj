@@ -17,6 +17,8 @@
 		92A73BDC22DBAD58002AFB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDA22DBAD58002AFB70 /* Main.storyboard */; };
 		92A73BE122DBAD59002AFB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */; };
 		92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
+		A52FBC4722F48B1D00173A9B /* AdminProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */; };
+		A52FBC4922F48D4900173A9B /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */; };
 		A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */; };
 		A54E892322E0BBDB00886DBE /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */; };
 		A54E892522E21CFB00886DBE /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892422E21CFB00886DBE /* FirebaseUtils.swift */; };
@@ -76,6 +78,8 @@
 		92A73BE022DBAD59002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92A73BE222DBAD59002AFB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductsViewController.swift; sourceTree = "<group>"; };
+		A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductViewController.swift; sourceTree = "<group>"; };
 		A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		A54E892422E21CFB00886DBE /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			children = (
 				92A73BD822DBAD58002AFB70 /* AdminHomeViewController.swift */,
 				A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */,
+				A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */,
+				A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -544,9 +550,11 @@
 				A5C9B23A22F08CD1007D90B3 /* ProductDetailViewController.swift in Sources */,
 				92A73BD922DBAD58002AFB70 /* AdminHomeViewController.swift in Sources */,
 				92A73BD722DBAD58002AFB70 /* AppDelegate.swift in Sources */,
+				A52FBC4722F48B1D00173A9B /* AdminProductsViewController.swift in Sources */,
 				A54E892A22E220B000886DBE /* Category.swift in Sources */,
 				A5C9B23722F08C31007D90B3 /* Extensions.swift in Sources */,
 				A5C9B23622F08B6A007D90B3 /* HomeViewController.swift in Sources */,
+				A52FBC4922F48D4900173A9B /* AddEditProductViewController.swift in Sources */,
 				A5EC3E0222E5F8EA0042FF72 /* ProductCell.swift in Sources */,
 				A5EC3DF422E5F2190042FF72 /* CategoryCell.swift in Sources */,
 				A5EC3DFE22E5F8240042FF72 /* Product.swift in Sources */,

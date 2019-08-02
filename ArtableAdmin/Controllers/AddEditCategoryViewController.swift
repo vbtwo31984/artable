@@ -15,6 +15,9 @@ class AddEditCategoryViewController: UIViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var categoryImage: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addEditButton: RoundedButton!
+    
+    var categoryToEdit: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,19 @@ class AddEditCategoryViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(chooseImage(_:)))
         tap.numberOfTapsRequired = 1
         categoryImage.addGestureRecognizer(tap)
+        
+        if let category = categoryToEdit {
+            title = "Edit Category"
+            nameText.text = category.name
+            if let url = URL(string: category.imageUrl) {
+                categoryImage.contentMode = .scaleAspectFill
+                categoryImage.kf.setImage(with: url)
+                addEditButton.setTitle("Save Changes", for: .normal)
+            }
+        }
+        else {
+            title = "New Category"
+        }
     }
     
     @objc func chooseImage(_ tap: UITapGestureRecognizer) {
@@ -73,10 +89,16 @@ class AddEditCategoryViewController: UIViewController {
     
     func uploadDocument(url: String) {
         var docRef: DocumentReference!
-        
         var category = Category(name: nameText.text!, id: "", imageUrl: url)
-        docRef = Firestore.firestore().collection("categories").document()
-        category.id = docRef.documentID
+        
+        if let editCategory = categoryToEdit {
+            docRef = Firestore.firestore().collection("categories").document(editCategory.id)
+            category.id = editCategory.id
+        }
+        else {
+            docRef = Firestore.firestore().collection("categories").document()
+            category.id = docRef.documentID
+        }
         
         docRef.setData(category.data, merge: true) { (error) in
             if let error = error {
