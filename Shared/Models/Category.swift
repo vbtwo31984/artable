@@ -23,4 +23,23 @@ struct Category {
         self.isActive = data["isActive"] as? Bool ?? false
         self.timeStamp = data["timeStamp"] as? Timestamp ?? Timestamp()
     }
+    
+    init(name: String, id: String, imageUrl: String, isActive: Bool = true, timeStamp: Timestamp = Timestamp()) {
+        self.name = name
+        self.id = id
+        self.imageUrl = imageUrl
+        self.isActive = isActive
+        self.timeStamp = timeStamp
+    }
+    
+    var data: [String: Any] {
+        let data: [String: Any] = [
+            "name": name,
+            "id": id,
+            "imageUrl": imageUrl,
+            "isActive": isActive,
+            "timeStamp": timeStamp
+        ]
+        return data
+    }
 }

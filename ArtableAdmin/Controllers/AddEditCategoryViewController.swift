@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseFirestore
 
 class AddEditCategoryViewController: UIViewController {
 
@@ -27,6 +29,63 @@ class AddEditCategoryViewController: UIViewController {
     }
 
     @IBAction func addCategoryPressed(_ sender: Any) {
+        uploadImage()
+    }
+    
+    fileprivate func handleError(_ error: Error) {
+        self.simpleAlert(title: "Error", message: error.localizedDescription)
+        debugPrint(error)
+        self.activityIndicator.stopAnimating()
+    }
+    
+    func uploadImage() {
+        guard let image = categoryImage.image,
+            let categoryName = nameText.text, categoryName.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Must add category image and name")
+                return
+        }
+        
+        if let imageData = image.jpegData(compressionQuality: 0.2) {
+            activityIndicator.startAnimating()
+            let imageRef = Storage.storage().reference().child("/categoryImages/\(categoryName).jpg")
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            imageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+                if let error = error {
+                    self.handleError(error)
+                    return
+                }
+                
+                imageRef.downloadURL(completion: { (url, error) in
+                    if let error = error {
+                        self.handleError(error)
+                        return
+                    }
+                    
+                    if let url = url {
+                        self.uploadDocument(url: url.absoluteString)
+                    }
+                })
+            }
+        }
+    }
+    
+    func uploadDocument(url: String) {
+        var docRef: DocumentReference!
+        
+        var category = Category(name: nameText.text!, id: "", imageUrl: url)
+        docRef = Firestore.firestore().collection("categories").document()
+        category.id = docRef.documentID
+        
+        docRef.setData(category.data, merge: true) { (error) in
+            if let error = error {
+                self.handleError(error)
+                return
+            }
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }
