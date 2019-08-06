@@ -29,4 +29,28 @@ struct Product {
         timeStamp = data["timeStamp"] as? Timestamp ?? Timestamp()
         stock = data["stock"] as? Int ?? 0
     }
+    
+    init(name: String, id: String, category: String, price: Double, description: String, imageUrl: String, stock: Int, timeStamp: Timestamp = Timestamp()) {
+        self.name = name
+        self.id = id
+        self.category = category
+        self.price = price
+        self.productDescription = description
+        self.imageUrl = imageUrl
+        self.stock = stock
+        self.timeStamp = timeStamp
+    }
+    
+    var data: [String: Any] {
+        return [
+            "name": name,
+            "id": id,
+            "category": category,
+            "price": price,
+            "description": productDescription,
+            "imageUrl": imageUrl,
+            "timeStamp": timeStamp,
+            "stock": stock
+        ]
+    }
 }

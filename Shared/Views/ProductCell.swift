@@ -24,7 +24,9 @@ class ProductCell: UITableViewCell {
     
     func configureCell(product: Product) {
         title.text = product.name
-        price.text = String(product.price)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        price.text = formatter.string(from: NSNumber(value: product.price))
         if let url = URL(string: product.imageUrl) {
             let placeholder = UIImage(named: "placeholder")
             productImage.kf.indicatorType = .activity

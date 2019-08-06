@@ -18,6 +18,12 @@ class AdminProductsViewController: ProductsViewController {
         title = category.name
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        selectedProduct = nil
+    }
+    
     @IBAction func editCategory(_ sender: Any) {
         performSegue(withIdentifier: Segue.ToEditCategory, sender: self)
     }

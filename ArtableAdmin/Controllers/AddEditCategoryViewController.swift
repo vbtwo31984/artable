@@ -32,8 +32,8 @@ class AddEditCategoryViewController: UIViewController {
             if let url = URL(string: category.imageUrl) {
                 categoryImage.contentMode = .scaleAspectFill
                 categoryImage.kf.setImage(with: url)
-                addEditButton.setTitle("Save Changes", for: .normal)
             }
+            addEditButton.setTitle("Save Changes", for: .normal)
         }
         else {
             title = "New Category"
