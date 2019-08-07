@@ -50,6 +50,10 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             loginOutButton.title = "Logout"
+            
+            if UserService.userListener == nil {
+                UserService.getCurrentUser()
+            }
         }
         else {
             loginOutButton.title = "Login"
@@ -70,6 +74,7 @@ class HomeViewController: UIViewController {
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             do {
                 try Auth.auth().signOut()
+                UserService.logoutUser()
                 signInAnonymously()
             } catch {
                 debugPrint(error)

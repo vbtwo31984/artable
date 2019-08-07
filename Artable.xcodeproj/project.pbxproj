@@ -33,6 +33,7 @@
 		A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
 		A56534E622DE10DA0047E0FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E522DE10DA0047E0FE /* Constants.swift */; };
 		A56534E922DF53970047E0FE /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E822DF53970047E0FE /* RoundedViews.swift */; };
+		A570E7DE22FB07C9006A3B4C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570E7DD22FB07C9006A3B4C /* UserService.swift */; };
 		A5C9B23622F08B6A007D90B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A73BC022DBACEA002AFB70 /* HomeViewController.swift */; };
 		A5C9B23722F08C31007D90B3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
 		A5C9B23822F08C35007D90B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E522DE10DA0047E0FE /* Constants.swift */; };
@@ -42,6 +43,7 @@
 		A5C9B23D22F08D88007D90B3 /* AddEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */; };
 		A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
 		A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
+		A5D7308A22F9C0D300149E00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7308922F9C0D300149E00 /* User.swift */; };
 		A5EC3DF322E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
 		A5EC3DF422E5F2190042FF72 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */; };
 		A5EC3DF522E5F2190042FF72 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */; };
@@ -92,9 +94,11 @@
 		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A56534E522DE10DA0047E0FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		A570E7DD22FB07C9006A3B4C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryViewController.swift; sourceTree = "<group>"; };
 		A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
+		A5D7308922F9C0D300149E00 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5EC3DF122E5F2190042FF72 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		A5EC3DF222E5F2190042FF72 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		92A73BBD22DBACEA002AFB70 /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				A570E7DC22FB07BA006A3B4C /* Services */,
 				A54E891F22E0BBBC00886DBE /* XIBs */,
 				A56534E722DF53810047E0FE /* Views */,
 				A56534DC22DE08960047E0FE /* Storyboards */,
@@ -206,6 +211,7 @@
 			children = (
 				A54E892822E220B000886DBE /* Category.swift */,
 				A5EC3DFC22E5F8240042FF72 /* Product.swift */,
+				A5D7308922F9C0D300149E00 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +254,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A570E7DC22FB07BA006A3B4C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A570E7DD22FB07C9006A3B4C /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A5C9B23E22F08D91007D90B3 /* Controllers */ = {
@@ -524,7 +538,9 @@
 				A54E892922E220B000886DBE /* Category.swift in Sources */,
 				A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */,
 				A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */,
+				A5D7308A22F9C0D300149E00 /* User.swift in Sources */,
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
+				A570E7DE22FB07C9006A3B4C /* UserService.swift in Sources */,
 				A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */,
 				A5EC3E0122E5F8EA0042FF72 /* ProductCell.swift in Sources */,
 				92A73BC122DBACEA002AFB70 /* HomeViewController.swift in Sources */,

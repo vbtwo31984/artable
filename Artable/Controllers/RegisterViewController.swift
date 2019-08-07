@@ -73,7 +73,24 @@ class RegisterViewController: UIViewController {
                 return
             }
             
+            if let firUser = authResult?.user {
+                let artUser = User(id: firUser.uid, email: email, username: username, stripeId: "")
+                self.createFirestoreUser(artUser)
+            }
+            
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func createFirestoreUser(_ user: User) {
+        let userRef = Firestore.firestore().collection("users").document(user.id)
+        userRef.setData(user.data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint(error)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
