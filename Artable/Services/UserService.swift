@@ -64,4 +64,17 @@ final class _UserService {
         user = User()
         favorites.removeAll()
     }
+    
+    func favoriteSelected(product: Product) {
+        let favoritesRef = db.collection("users").document(user.id).collection("favorites")
+        
+        if favorites.contains(product) {
+            favorites.removeAll { $0 == product }
+            favoritesRef.document(product.id).delete()
+        }
+        else {
+            favorites.append(product)
+            favoritesRef.document(product.id).setData(product.data)
+        }
+    }
 }

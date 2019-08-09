@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Artable
 //
 //  Created by Vladimir Burmistrovich on 7/14/19.
@@ -70,6 +70,10 @@ class HomeViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    @IBAction func favoritesPressed(_ sender: Any) {
+        performSegue(withIdentifier: Segue.ToFavorites, sender: self)
+    }
+    
     @IBAction func loginOutPressed(_ sender: Any) {
         if let user = Auth.auth().currentUser, !user.isAnonymous {
             do {
@@ -94,6 +98,12 @@ class HomeViewController: UIViewController {
         if segue.identifier == Segue.ToProducts {
             if let destination = segue.destination as? ProductsViewController {
                 destination.category = selectedCategory
+            }
+        }
+        else if segue.identifier == Segue.ToFavorites {
+            if let destination = segue.destination as? ProductsViewController {
+                destination.category = selectedCategory
+                destination.showFavorites = true
             }
         }
     }
