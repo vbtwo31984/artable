@@ -41,6 +41,9 @@
 		A5C9B23A22F08CD1007D90B3 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
 		A5C9B23B22F08CDB007D90B3 /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
 		A5C9B23D22F08D88007D90B3 /* AddEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */; };
+		A5CD7A7922FDABC200B16237 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD7A7822FDABC200B16237 /* CheckoutViewController.swift */; };
+		A5CD7A7C22FDAE9500B16237 /* CardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD7A7A22FDAE9500B16237 /* CardItemCell.swift */; };
+		A5CD7A7D22FDAE9500B16237 /* CardItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CD7A7B22FDAE9500B16237 /* CardItemCell.xib */; };
 		A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */; };
 		A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */; };
 		A5D7308A22F9C0D300149E00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7308922F9C0D300149E00 /* User.swift */; };
@@ -96,6 +99,9 @@
 		A56534E822DF53970047E0FE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		A570E7DD22FB07C9006A3B4C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A5C9B23C22F08D88007D90B3 /* AddEditCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryViewController.swift; sourceTree = "<group>"; };
+		A5CD7A7822FDABC200B16237 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		A5CD7A7A22FDAE9500B16237 /* CardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemCell.swift; sourceTree = "<group>"; };
+		A5CD7A7B22FDAE9500B16237 /* CardItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardItemCell.xib; sourceTree = "<group>"; };
 		A5D13AA422EF37B900F6EA4E /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailViewController.xib; sourceTree = "<group>"; };
 		A5D7308922F9C0D300149E00 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 		A54E891F22E0BBBC00886DBE /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				A5CD7A7B22FDAE9500B16237 /* CardItemCell.xib */,
 				A54E892122E0BBDB00886DBE /* ForgotPasswordViewController.xib */,
 				A5D13AA522EF37B900F6EA4E /* ProductDetailViewController.xib */,
 			);
@@ -235,6 +242,7 @@
 				A56534E022DE0A050047E0FE /* RegisterViewController.swift */,
 				A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */,
 				A5EC3DF922E5F7BA0042FF72 /* ProductsViewController.swift */,
+				A5CD7A7822FDABC200B16237 /* CheckoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 		A56534E722DF53810047E0FE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5CD7A7A22FDAE9500B16237 /* CardItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				A5D13AA722EF37B900F6EA4E /* ProductDetailViewController.xib in Resources */,
 				A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */,
 				92A73BC422DBACEA002AFB70 /* Main.storyboard in Resources */,
+				A5CD7A7D22FDAE9500B16237 /* CardItemCell.xib in Resources */,
 				A56534D722DCBEC90047E0FE /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +547,7 @@
 				A54E892522E21CFB00886DBE /* FirebaseUtils.swift in Sources */,
 				A54E892922E220B000886DBE /* Category.swift in Sources */,
 				A5D13AA622EF37B900F6EA4E /* ProductDetailViewController.swift in Sources */,
+				A5CD7A7C22FDAE9500B16237 /* CardItemCell.swift in Sources */,
 				A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */,
 				A5D7308A22F9C0D300149E00 /* User.swift in Sources */,
 				A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */,
@@ -550,6 +561,7 @@
 				A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */,
 				A56534E622DE10DA0047E0FE /* Constants.swift in Sources */,
 				A5EC3DF322E5F2190042FF72 /* CategoryCell.swift in Sources */,
+				A5CD7A7922FDABC200B16237 /* CheckoutViewController.swift in Sources */,
 				A5EC3DFD22E5F8240042FF72 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
