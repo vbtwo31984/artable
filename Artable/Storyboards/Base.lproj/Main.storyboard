@@ -238,8 +238,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddM-sd-ZHt">
-                                <rect key="frame" x="20" y="108" width="374" height="435"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddM-sd-ZHt">
+                                <rect key="frame" x="6" y="108" width="402" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -250,9 +250,9 @@
                             <constraint firstItem="CFq-bG-8tq" firstAttribute="leading" secondItem="KKQ-ue-m4K" secondAttribute="leading" constant="20" id="AjH-i3-JIX"/>
                             <constraint firstItem="KKQ-ue-m4K" firstAttribute="bottom" secondItem="CFq-bG-8tq" secondAttribute="bottom" constant="20" id="KeN-1R-EZx"/>
                             <constraint firstItem="KKQ-ue-m4K" firstAttribute="trailing" secondItem="CFq-bG-8tq" secondAttribute="trailing" constant="20" id="LQq-ra-Ywk"/>
-                            <constraint firstItem="ddM-sd-ZHt" firstAttribute="leading" secondItem="KKQ-ue-m4K" secondAttribute="leading" constant="20" id="NAL-Sb-3zO"/>
+                            <constraint firstItem="ddM-sd-ZHt" firstAttribute="leading" secondItem="KKQ-ue-m4K" secondAttribute="leading" constant="6" id="NAL-Sb-3zO"/>
                             <constraint firstItem="CFq-bG-8tq" firstAttribute="top" secondItem="x3O-8U-HYB" secondAttribute="bottom" constant="8" symbolic="YES" id="NRx-Oc-KpS"/>
-                            <constraint firstItem="KKQ-ue-m4K" firstAttribute="trailing" secondItem="ddM-sd-ZHt" secondAttribute="trailing" constant="20" id="X16-BG-DGa"/>
+                            <constraint firstItem="KKQ-ue-m4K" firstAttribute="trailing" secondItem="ddM-sd-ZHt" secondAttribute="trailing" constant="6" id="X16-BG-DGa"/>
                             <constraint firstItem="x3O-8U-HYB" firstAttribute="centerX" secondItem="WgB-9B-z5s" secondAttribute="centerX" id="djI-ha-f8c"/>
                             <constraint firstItem="ddM-sd-ZHt" firstAttribute="top" secondItem="KKQ-ue-m4K" secondAttribute="top" constant="20" id="eCF-xe-KXq"/>
                             <constraint firstItem="CFq-bG-8tq" firstAttribute="top" secondItem="yHI-hQ-ZgE" secondAttribute="bottom" constant="30" id="uSU-sf-pTc"/>

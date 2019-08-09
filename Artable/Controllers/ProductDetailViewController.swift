@@ -45,6 +45,8 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func addCardPressed(_ sender: Any) {
+        StripeCart.addItem(product)
+        dismissProduct()
     }
     
     @IBAction func dismissProduct(_ sender: Any) {

@@ -81,6 +81,10 @@ class ProductsViewController: UIViewController, ProductCellDelegate {
         }
     }
     
+    func productAddedToCard(product: Product) {
+        StripeCart.addItem(product)
+    }
+    
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
