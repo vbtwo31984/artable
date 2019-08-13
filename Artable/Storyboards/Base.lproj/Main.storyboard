@@ -118,7 +118,7 @@
                                             <constraint firstAttribute="height" constant="1" id="HHz-M1-xFv"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Ftl-23-dxP">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ftl-23-dxP">
                                         <rect key="frame" x="0.0" y="9" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwe-Aw-oOn">
@@ -262,7 +262,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="x3O-8U-HYB" id="CSf-77-uC0"/>
-                        <outlet property="paymentMethodButton" destination="y8f-Lv-F5I" id="jMV-AK-Vkn"/>
+                        <outlet property="paymentMethodButton" destination="cym-il-cP5" id="d7J-wp-LIa"/>
                         <outlet property="processingFeeLabel" destination="0aF-8V-FqT" id="dhF-Sz-NP2"/>
                         <outlet property="shippingFeeLabel" destination="htI-DS-8OA" id="F0c-te-bCb"/>
                         <outlet property="shippingMethodButton" destination="y8f-Lv-F5I" id="iPT-DK-luE"/>

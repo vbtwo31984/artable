@@ -106,7 +106,28 @@ extension CheckoutViewController: CardItemCellDelegate {
 
 extension CheckoutViewController: STPPaymentContextDelegate {
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        if let paymentMethod = paymentContext.selectedPaymentOption {
+            let attachment = NSTextAttachment()
+            if let label = paymentMethodButton.titleLabel {
+                attachment.bounds = CGRect(x: 0,
+                                           y: (label.font.capHeight - paymentMethod.image.size.height).rounded() / 2,
+                                           width: paymentMethod.image.size.width,
+                                           height: paymentMethod.image.size.height)
+            }
+            attachment.image = paymentMethod.image
+            let string = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+            string.append(NSAttributedString(string: paymentMethod.label))
+            paymentMethodButton.setAttributedTitle(string, for: .normal)
+        }
+        else {
+            paymentMethodButton.setTitle("Select Method", for: .normal)
+        }
         
+        if let shippingMethod = paymentContext.selectedShippingMethod {
+            shippingMethodButton.setTitle(shippingMethod.label, for: .normal)
+            StripeCart.shippingFee = Int(Double(truncating: shippingMethod.amount) * 100)
+            setupPaymentInfo()
+        }
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
@@ -119,5 +140,22 @@ extension CheckoutViewController: STPPaymentContextDelegate {
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
+        let upsGround = PKShippingMethod(label: "UPS Ground", amount: 0)
+        upsGround.detail = "Arrives in 3-5 days"
+        upsGround.identifier = "ups_ground"
+        
+        let fedex = PKShippingMethod(label: "FedEx Next Day", amount: 6.99)
+        fedex.detail = "Arrives tomorrow"
+        fedex.identifier = "fedex"
+        
+        if address.country == "US" {
+            completion(.valid, nil, [upsGround, fedex], fedex)
+        }
+        else {
+            completion(.invalid, nil, nil, nil)
+        }
     }
 }

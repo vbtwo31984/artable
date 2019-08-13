@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		92A73BDC22DBAD58002AFB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDA22DBAD58002AFB70 /* Main.storyboard */; };
 		92A73BE122DBAD59002AFB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */; };
 		92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
+		92F6945D230314D9004CC90D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F6945C230314D9004CC90D /* GoogleService-Info.plist */; };
 		A52FBC4722F48B1D00173A9B /* AdminProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */; };
 		A52FBC4922F48D4900173A9B /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */; };
 		A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */; };
@@ -27,7 +28,6 @@
 		A54E892A22E220B000886DBE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892822E220B000886DBE /* Category.swift */; };
 		A56534D722DCBEC90047E0FE /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */; };
 		A56534D922DCCC980047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534D822DCCC980047E0FE /* GoogleService-Info.plist */; };
-		A56534DB22DCCD660047E0FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */; };
 		A56534DF22DE09F90047E0FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534DE22DE09F90047E0FE /* LoginViewController.swift */; };
 		A56534E122DE0A050047E0FE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E022DE0A050047E0FE /* RegisterViewController.swift */; };
 		A56534E422DE0D6B0047E0FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56534E322DE0D6B0047E0FE /* Extensions.swift */; };
@@ -84,6 +84,7 @@
 		92A73BDB22DBAD58002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92A73BE022DBAD59002AFB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92A73BE222DBAD59002AFB70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F6945C230314D9004CC90D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E926DF0CA410FDFF0F7BB9A /* Pods_ArtableAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtableAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminProductsViewController.swift; sourceTree = "<group>"; };
 		A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		A54E892822E220B000886DBE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A56534D622DCBEC90047E0FE /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		A56534D822DCCC980047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A56534DE22DE09F90047E0FE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A56534E022DE0A050047E0FE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A56534E322DE0D6B0047E0FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				92A73BD622DBAD58002AFB70 /* AppDelegate.swift */,
 				92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */,
 				92A73BE222DBAD59002AFB70 /* Info.plist */,
-				A56534DA22DCCD660047E0FE /* GoogleService-Info.plist */,
+				92F6945C230314D9004CC90D /* GoogleService-Info.plist */,
 			);
 			path = ArtableAdmin;
 			sourceTree = "<group>";
@@ -430,11 +430,11 @@
 			files = (
 				A5EC3DF622E5F2190042FF72 /* CategoryCell.xib in Resources */,
 				92A73BE122DBAD59002AFB70 /* LaunchScreen.storyboard in Resources */,
-				A56534DB22DCCD660047E0FE /* GoogleService-Info.plist in Resources */,
 				A5C9B23B22F08CDB007D90B3 /* ProductDetailViewController.xib in Resources */,
 				A5EC3E0422E5F8EA0042FF72 /* ProductCell.xib in Resources */,
 				92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */,
 				92A73BDC22DBAD58002AFB70 /* Main.storyboard in Resources */,
+				92F6945D230314D9004CC90D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
