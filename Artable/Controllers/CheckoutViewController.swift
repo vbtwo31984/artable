@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import FirebaseFunctions
 
 class CheckoutViewController: UIViewController {
 
@@ -57,6 +58,8 @@ class CheckoutViewController: UIViewController {
     }
     
     @IBAction func placeOrder(_ sender: Any) {
+        paymentContext.requestPayment()
+        activityIndicator.startAnimating()
     }
     
     @IBAction func selectPaymentMethod(_ sender: Any) {
@@ -131,15 +134,68 @@ extension CheckoutViewController: STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        activityIndicator.stopAnimating()
         
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let retry = UIAlertAction(title: "Retry", style: .default) { (_) in
+            self.paymentContext.retryLoading()
+        }
+        alertController.addAction(cancel)
+        alertController.addAction(retry)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
         
+        let data = [
+            "total": StripeCart.total,
+            "customerId": UserService.user.stripeId,
+            "idempotency": idempotency
+            ] as [String : Any]
+        
+        Functions.functions().httpsCallable("makeCharge").call(data) { (result, error) in
+            if let error = error {
+                debugPrint(error)
+                self.simpleAlert(title: "Error", message: "Unable to make charge")
+                completion(error)
+                return
+            }
+            
+            StripeCart.clear()
+            self.tableView.reloadData()
+            self.setupPaymentInfo()
+            completion(nil)
+        }
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        let title: String
+        let message: String
         
+        switch status {
+        case .error:
+            activityIndicator.stopAnimating()
+            title = "Error"
+            message = error?.localizedDescription ?? ""
+        case .success:
+            activityIndicator.startAnimating()
+            title = "Success!"
+            message = "Thank you for your purchase."
+        default:
+            return
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
