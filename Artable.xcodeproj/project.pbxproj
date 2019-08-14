@@ -18,6 +18,9 @@
 		92A73BE122DBAD59002AFB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BDF22DBAD59002AFB70 /* LaunchScreen.storyboard */; };
 		92A73BE722DBADB0002AFB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A73BC522DBACEB002AFB70 /* Assets.xcassets */; };
 		92F6945D230314D9004CC90D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F6945C230314D9004CC90D /* GoogleService-Info.plist */; };
+		A50FCDC02304562300878B8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7308922F9C0D300149E00 /* User.swift */; };
+		A50FCDC12304563000878B8B /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CD7A7F22FDB0B700B16237 /* StripeCart.swift */; };
+		A50FCDC22304563600878B8B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A570E7DD22FB07C9006A3B4C /* UserService.swift */; };
 		A52FBC4722F48B1D00173A9B /* AdminProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4622F48B1D00173A9B /* AdminProductsViewController.swift */; };
 		A52FBC4922F48D4900173A9B /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FBC4822F48D4900173A9B /* AddEditProductViewController.swift */; };
 		A54E892222E0BBDB00886DBE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E892022E0BBDB00886DBE /* ForgotPasswordViewController.swift */; };
@@ -546,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50FCDC12304563000878B8B /* StripeCart.swift in Sources */,
 				A5C9B23922F08C5B007D90B3 /* RoundedViews.swift in Sources */,
 				A5EC3DFB22E5F7D80042FF72 /* ProductsViewController.swift in Sources */,
 				A5C9B23D22F08D88007D90B3 /* AddEditCategoryViewController.swift in Sources */,
@@ -553,10 +557,12 @@
 				A54E892622E21D8800886DBE /* FirebaseUtils.swift in Sources */,
 				A5C9B23A22F08CD1007D90B3 /* ProductDetailViewController.swift in Sources */,
 				92A73BD922DBAD58002AFB70 /* AdminHomeViewController.swift in Sources */,
+				A50FCDC02304562300878B8B /* User.swift in Sources */,
 				92A73BD722DBAD58002AFB70 /* AppDelegate.swift in Sources */,
 				A52FBC4722F48B1D00173A9B /* AdminProductsViewController.swift in Sources */,
 				A54E892A22E220B000886DBE /* Category.swift in Sources */,
 				A5C9B23722F08C31007D90B3 /* Extensions.swift in Sources */,
+				A50FCDC22304563600878B8B /* UserService.swift in Sources */,
 				A5C9B23622F08B6A007D90B3 /* HomeViewController.swift in Sources */,
 				A52FBC4922F48D4900173A9B /* AddEditProductViewController.swift in Sources */,
 				A5EC3E0222E5F8EA0042FF72 /* ProductCell.swift in Sources */,

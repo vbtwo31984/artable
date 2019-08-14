@@ -51,4 +51,12 @@ class AdminProductsViewController: ProductsViewController {
         }
     }
     
+    override func productFavorited(product: Product) {
+        return
+    }
+    
+    override func productAddedToCard(product: Product) {
+        return
+    }
+    
 }
