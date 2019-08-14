@@ -71,6 +71,10 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func favoritesPressed(_ sender: Any) {
+        if(UserService.isGuest) {
+            simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantange of all our features.")
+            return
+        }
         performSegue(withIdentifier: Segue.ToFavorites, sender: self)
     }
     

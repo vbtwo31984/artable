@@ -75,6 +75,10 @@ class ProductsViewController: UIViewController, ProductCellDelegate {
     }
 
     func productFavorited(product: Product) {
+        if(UserService.isGuest) {
+            simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantange of all our features.")
+            return
+        }
         UserService.favoriteSelected(product: product)
         if let index = products.firstIndex(of: product) {
             tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
@@ -82,6 +86,10 @@ class ProductsViewController: UIViewController, ProductCellDelegate {
     }
     
     func productAddedToCard(product: Product) {
+        if(UserService.isGuest) {
+            simpleAlert(title: "Hi friend", message: "This is a user only feature, please create a registered user to take advantange of all our features.")
+            return
+        }
         StripeCart.addItem(product)
     }
     
